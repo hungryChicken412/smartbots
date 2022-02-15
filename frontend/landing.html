@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <title>Chat Window</title>
+</head>
+<body>
+    
+
+    <section class="smartbot-section">
+        <button class="smartbot-chat-btn smartbot-button"> 
+            <i class="material-icons"> comment </i>
+        </button>
+
+        <div id="chat-popup" class="smartbot-chat-popup">
+            <!-- <div class="badge">1</div> -->
+            <div class="smartbot-chat-area">
+              <span id="established" class="" style="color:gray;padding-top:20px;">
+                Establishing connection please wait
+              </span>
+            </div>
+
+            <div class="smartbot-information-panel">
+              <button id="end-convo" class="smartbot-button smartbot-info">
+                END CONVERSATION
+              </button>
+            </div>
+
+            <div class="smartbot-input-area">
+                <input class="smartbot-input" type="text" id="submit-text" placeholder="Type your message here!">
+                <button class="smartbot-submit smartbot-button" id="submit-button"><img width="20px" src="send.png"></button>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
+        <script src="chatbot.js"></script>
+    </section>
+    
+
+
+</body>
+</html>

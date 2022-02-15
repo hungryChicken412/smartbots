@@ -1,0 +1,241 @@
+.smartbot-button{
+  background: none;
+  border:none;
+  outline: none;
+  cursor: pointer;
+}
+
+.smartbot-chat-popup{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.smartbot-section{
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+.smartbot-h1{
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+.smartbot-p{
+  font-size: 2rem;
+}
+
+
+.smartbot-chat-btn{
+  position: fixed;
+  right:50px;
+  bottom: 50px;
+  background: linear-gradient(0.12turn, #04a49c, #06d7cc);
+  color: white;
+  width:60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 1;
+  
+  transition: opacity 0.3s;
+  box-shadow: 0 5px 20px rgb(0 0 0 / 26%);
+}
+
+.smartbot-chat-btn:hover, .smartbot-submit:hover, #emoji-btn:hover{
+  opacity: 1;
+}
+
+#chat-popup{
+  background:white;
+  position: fixed;
+  bottom: 98px;
+  right: 81px;
+  height: 0;
+  
+  width: 0;
+  overflow: hidden;
+  
+  transition: all 0.25s ease-in;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 5px 20px rgb(221 221 221);
+  border-radius: 5px;
+}
+
+#chat-popup.show{
+  display: flex;
+  bottom:80px;
+  right:120px;
+  height: 450px;
+  border:3px solid #dcdcdc66;
+  width: 300px;
+  transition: all ease-in 0.25s;
+}
+
+.smartbot-chat-area{
+  height: 80%;
+  overflow-y: auto;
+  opacity: 1 !important;
+  padding:0.3rem;
+  overflow-x: hidden;
+}
+
+.smartbot-income-msg{
+  display: flex;
+  align-items: center;
+}
+
+.smartbot-avatar{
+  width:45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.smartbot-income-msg .smartbot-msg{
+  background:linear-gradient(0.3turn, #00aef7, #93c4f2);
+  color: white;
+  padding:0.5rem;
+  border-radius: 10px;
+  margin-left: 1rem;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 15%);
+}
+
+.smartbot-badge{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color:white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:-10px;
+  right: -10px;
+}
+
+.smartbot-input-area{
+  position: relative;
+  display: flex;
+  border-top: 2px solid #dcdcdc66;
+  justify-content: center;
+}
+
+.smartbot-input{
+  width:100%;
+  border: none;
+  padding-left:10px;
+  padding-right:10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  height: 2.2rem;
+}
+
+.smartbot-input input[type="text"]::placeholder{
+  color:#e2e2e2;
+}
+
+::-webkit-scrollbar {
+  background:#f3f3f3;
+  width: 4px;
+  
+}
+::-webkit-scrollbar-thumb {
+  background: #81e4d5;
+  border-radius:20px;
+}
+
+.smartbot-submit{
+  padding: 0.25rem 0.5rem;
+  
+  
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+
+.smartbot-msg-card{ 
+  margin-top:10px;
+}
+.smartbot-info{
+  color: white;
+    font-size: small;
+    background: #f37878;
+    justify-content: center;
+    width: fit-content;
+    align-content: center;
+    align-self: center;
+    padding: 4px;
+    border-radius: 10px;
+}
+.smartbot-info-start{
+  color: white;
+  font-size: small;
+  background: rgb(66, 223, 189);
+  justify-content: center;
+  width: fit-content;
+  align-content: center;
+  align-self: center;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.smartbot-out-msg{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.smartbot-my-msg{
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.75rem;
+  
+  
+  border-radius: 10px;
+  word-break: break-all;
+}
+
+.smartbot-usr-msg {
+  padding: 0.5rem;
+  background-color: #ececec;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
+  word-break:normal;
+  text-align: right;
+}
+
+.smartbot-choice-msg{
+  padding-left:20px;
+}
+.smartbot-choice-msg .smartbot-.msg{
+  background: linear-gradient(0.2turn, #81e4d5, #71d6c7)
+}
+
+@media (max-width:700px){
+
+  .smartbot-chat-popup{
+      bottom: 120px;
+      right:10%;
+      width: 80vw;
+  }
+}@media only screen and (max-width: 600px) {
+  .smartbot-chat-popup{
+      bottom: 80px !important;
+      right:20px !important;
+  }
+  .smartbot-chat-btn{
+    right:5px;
+    bottom: 5px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .smartbot-chat-popup{
+      bottom: 80px !important;
+      right:10px !important;
+      width:95% !important;
+  }
+}
