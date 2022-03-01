@@ -460,6 +460,7 @@
               <form method="POST">
                 {% csrf_token %}
                 {% for field in updateUserForm %}
+                <input type="hidden" name="type" id="type" value="updateID">
                 <div class="fieldWrapper">
                     {{ field.errors }}
                     {{ field.label_tag}}<br>

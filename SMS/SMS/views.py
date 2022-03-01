@@ -149,50 +149,38 @@ def dashboard(request):
 		except:
 			exists = False
 
-		if exists:
-			done = True
-			chatbot.context = data['context']
-			chatbot.greeting = data['greeting']
-			
-			
-			qas = list(data)[4::]
-			logs = faqs = []
-
-			if chatbot.greeting == "":
-				chatbot.greeting = "Hi How Are You?"
-			
-				
-			for i, qa in enumerate(qas):
-				
-				if i % 2 == 0:
-					if i == 0:
-						chatbot.greeting += f" <DIVIDER> {data[qas[i]]} "
-					else:
-						chatbot.greeting += f" <OPTION> {data[qas[i]]} "
-					faqs.append(faq.objects.create(question=data[qas[i]], ans=data[qas[i+1]]))
-
-			
-			
-			for f in chatbot.faqs.all():
-				f.delete()
-			chatbot.faqs.clear()
-			for f in faqs:
-				#faq.objects.get(question=f.question).delete()
-				chatbot.faqs.add(f)
-			
-			
-
-			chatbot.save()
-			messages.info(request,  f"Chatbot Created/Updated!")
-
-
-
-
-			
-
-		if updateform.is_valid():
+		if data["type"]=="updateID" and updateform.is_valid():
 			updateform.save()
 			return redirect('/app/')
+		else:
+			if exists:
+				done = True
+				chatbot.context = data['context']
+				chatbot.greeting = data['greeting']
+				qas = list(data)[4::]
+				logs = faqs = []
+
+				if chatbot.greeting == "":
+					chatbot.greeting = "Hi How Are You?"
+				
+					
+				for i, qa in enumerate(qas):
+					if i % 2 == 0:
+						if i == 0:
+							chatbot.greeting += f" <DIVIDER> {data[qas[i]]} "
+						else:
+							chatbot.greeting += f" <OPTION> {data[qas[i]]} "
+						faqs.append(faq.objects.create(question=data[qas[i]], ans=data[qas[i+1]]))
+				for f in chatbot.faqs.all():
+					f.delete()
+				chatbot.faqs.clear()
+				for f in faqs:
+					#faq.objects.get(question=f.question).delete()
+					chatbot.faqs.add(f)
+				chatbot.save()
+				messages.info(request,  f"Chatbot Created/Updated!")
+
+		
 
 		if data["type"] == "chatbotGeneration" and not done:
 			context = data["context"]
