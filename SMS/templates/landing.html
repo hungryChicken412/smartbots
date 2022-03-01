@@ -18,7 +18,7 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope:400|Calligraffitti:400">
     
-    
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     
     
     
@@ -38,9 +38,11 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body u-gradient u-overlap u-overlap-contrast" style="background-image: linear-gradient(#000000, black);"><header class="u-clearfix u-header u-header" id="sec-879f"><div class="u-clearfix u-sheet u-sheet-1">
+  <body class="u-body u-gradient u-overlap u-overlap-contrast" style="background-image: linear-gradient(#000000, black);">
+    {% include "main/includes/messages.html" %}
+    <header class="u-clearfix u-header u-header" id="sec-879f"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="/" class="u-image u-logo u-image-1">
-          <img src="{% static 'images/default-logo.png'%}" class="u-logo-image u-logo-image-1">
+          <h4 style="font-family:'Annie Use Your Telescope'; color:white;">Brainshell.IO</h4>
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: &quot;Annie Use Your Telescope&quot;;">
@@ -74,7 +76,8 @@
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-      </div></header>
+      </div>
+    </header>
     <section class="skrollable u-align-center u-clearfix u-image u-parallax u-shading u-section-1" src="" data-image-width="1920" data-image-height="1075" id="sec-eb2c">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <h1 class="u-custom-font u-text u-text-default u-title u-text-1">BRAINSHELL.IO</h1>
@@ -108,10 +111,10 @@
     <section class="u-clearfix u-section-3" id="sec-3e25">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">Presenting&nbsp;<br>
-          <span style="font-size: 96px;">Smart<span class="u-text-palette-4-base">Bots</span>
+          <span style="font-size: 96px;">Brain<span class="u-text-palette-4-base">Bots</span>
           </span>
         </h2>
-        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">Smartbots are smart chatbots powered by powerfull deep learning algorithms for your customers. Providing the most modern and smoothe experience, they won't even notice a difference! Say goodbye to those hardcoded chatbots with only a handfull of responses and their pre-determined questions. Now, your customers can ask whatever question(s) they come accross and the bot will reply accordingly!<br>
+        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">Brainbots are smart chatbots powered by powerfull deep learning algorithms for your customers. Providing the most modern and smoothe experience, they won't even notice a difference! Say goodbye to those hardcoded chatbots with only a handfull of responses and their pre-determined questions. Now, your customers can ask whatever question(s) they come accross and the bot will reply accordingly!<br>
           <br>ps: even if they need some life advice!
         </p>
         <a href="login/" class="u-align-center u-border-none u-btn u-btn-round u-button-style u-grey-5 u-hover-palette-4-base u-radius-50 u-btn-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-direction="Left"> &nbsp;GET STARTED for free</a>
@@ -122,7 +125,7 @@
         <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Right">Fluent and <span class="u-text-palette-4-base">dynamic</span>
         </h2>
         <img class="u-image u-image-default u-preserve-proportions u-image-1" src="{% static 'images/box11.png'%}" alt="" data-image-width="1024" data-image-height="1024">
-        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">have the most advance bots ready to greet your customers professionally, not bound by handful of hardcoded FAQs without any custom input. Smartbots allow your customers to enter any queries that they have and they will respond accordingly</p>
+        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">have the most advance bots ready to greet your customers professionally, not bound by handful of hardcoded FAQs without any custom input. Brainbots allow your customers to enter any queries that they have and they will respond accordingly</p>
       </div>
     </section>
     <section class="u-clearfix u-section-5" id="sec-9b3b">
@@ -142,17 +145,18 @@
         <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Right">Fun to <span class="u-text-palette-4-base">interact</span>
         </h2>
         <img class="u-image u-image-default u-preserve-proportions u-image-1" src="{% static 'images/chatbox3.png'%}" alt="" data-image-width="1024" data-image-height="1024">
-        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">Sometimes your chatbot might not understand what the customer is saying or might not have the corresponding information, in that case, smartbots are "smart" enough to respond in a way that doesn't make the customer unhappy.<br>
+        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="Up">Sometimes your chatbot might not understand what the customer is saying or might not have the corresponding information, in that case, Brainbots are "smart" enough to respond in a way that doesn't make the customer unhappy.<br>
           <br>ps: we got this response while testing lol
         </p>
       </div>
     </section>
     <section class="u-clearfix u-section-7" id="sec-bbd6">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-align-center u-custom-font u-text u-text-palette-4-base u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">Plus, IT'S ALL FREE</h2>
-        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">no hidden fee or charge of any sort,<br>Just sign up on our platform and simply plug in our chatbot code onto your website, and it'll handle the rest<br>of course, we need to make money, so some features will be disabled on the free plan, why not compare yourself<br>
+        <h2 class="u-align-center u-custom-font u-text u-text-palette-4-base u-text-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">Plus, Get a 100$ Credit for Free!</h2>
+        <p class="u-align-justify u-custom-font u-text u-text-white u-text-2" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">no hidden fee or charge of any sort,<br>Just sign up on our platform and simply plug in our chatbot code onto your website, and it'll handle the rest<br>
         </p>
-        <p class="u-align-justify u-custom-font u-text u-text-palette-4-base u-text-3" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">We plan on charging but in future, and for all the beta users, IT'LL BE FREE FOREVER!</p>
+        <p class="u-align-justify u-custom-font u-text u-text-palette-4-base u-text-3" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-direction="">We charge per message so, a message will cost 0.25$, meaning you're getting an awesome chatbot for less than 20$/month</p>
+        
         <a href="support/" class="u-align-center u-border-none u-btn u-button-style u-hover-white u-palette-4-base u-radius-50 u-btn-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-direction="Left"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 50 50" x="0px" y="0px" style="width: 1em; height: 1em;"><path style="fill:currentColor;" d="M24.85,10.126c2.018-4.783,6.628-8.125,11.99-8.125c7.223,0,12.425,6.179,13.079,13.543
 	c0,0,0.353,1.828-0.424,5.119c-1.058,4.482-3.545,8.464-6.898,11.503L24.85,48L7.402,32.165c-3.353-3.038-5.84-7.021-6.898-11.503
 	c-0.777-3.291-0.424-5.119-0.424-5.119C0.734,8.179,5.936,2,13.159,2C18.522,2,22.832,5.343,24.85,10.126z"></path></svg><img></span>&nbsp;Support
@@ -167,11 +171,11 @@
         <ol class="u-align-justify u-custom-font u-text u-text-white u-text-3" data-animation-name="slideIn" data-animation-duration="1000" data-animation-direction="Down">
           <li>Sign up on our platform<br>
           </li>
-          <li>go to create chatbot profile</li>
+          <li>Create Brainbot profile</li>
           <li>fill out the details</li>
-          <li>Click generate embed</li>
-          <li>Paste this embed onto your website</li>
-          <li>TELL EVERYONE!</li>
+          <li>Copy embed</li>
+          <li>Paste the embed onto your website</li>
+          <li>TELL EVERYONE! <span style="color:rgb(255, 41, 205);">"<3" </span> </li>
         </ol>
       </div>
     </section>
@@ -179,10 +183,9 @@
     
     
     
-    <footer class="shorten u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-00ff"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">brainshell.io</p>
-      </div></footer>
-    <section class="shorten u-backlink u-clearfix u-grey-80">
+    
+    <section class="shorten u-backlink u-clearfix" style="color:white;">
+      <p class="u-small-text u-text u-text-variant u-text-1">brainshell.io</p>
       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
         <span>Website Templates</span>
       </a>

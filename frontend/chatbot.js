@@ -36,8 +36,10 @@ chatBtn.addEventListener('click', ()=>{
     }
 })
 
+
+token = document.getElementsByClassName('smartbot-section')[0].id;
 function startConversation(){
-    const ws = new WebSocket("ws://127.0.0.1:567/20e7587ec47237ab823c");
+    const ws = new WebSocket("ws://127.0.0.1:567/"+token);
     console.log(ws);
     window.ws = ws;
 
@@ -127,6 +129,8 @@ endconvo.addEventListener('click', (e) => {
     endconversation();
     
 })
+
+
 
 inputElm.addEventListener('keypress', function (e) {
     if (e.key=="Enter"){

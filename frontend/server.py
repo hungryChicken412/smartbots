@@ -18,6 +18,7 @@ bots = []
 
 async def server(ws:str, path:int):
     try:
+        cost = 0
         bot, greet, botInst, status = initializeToken(path, bots, ws.remote_address[0])
         if (status == False):
             await ws.send("Something Went Wrong! Please Contact Support")
@@ -29,13 +30,16 @@ async def server(ws:str, path:int):
         while True:
             message = await ws.recv()
             reply = processMsg(message) # bot.process_message
+            cost += 1
             if reply != "":
                 await ws.send(reply)
             #print(f'Msg [{message}]')
     except Exception as e:
         bots.remove(botInst)
-        notes = f"Client Disconnected: {botInst} ip {botInst.ip}, remaining {bots} with Status {e}"
-        print(notes)
+        notes = f"Client Disconnected: {botInst} ip {botInst.ip}, remaining {bots} with Status {e} with cost {cost}"
+        if cost > 1:
+            reportCost(cost, botInst.token, botInst.ip)
+        #print(notes)
 
 Server = websockets.serve(server, serverIP, serverPort)
 

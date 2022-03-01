@@ -4,13 +4,9 @@
   transition: 0.5s;
 }
 body {
-
-
   font-family: Georgia, 'Times New Roman', Times, serif;
-  
   overflow-x: hidden;
-  background-color: rgb(11, 4, 17);
-  background-image: linear-gradient(to right, rgb(5, 2, 9), rgb(11, 4, 17), rgb(5, 2, 9));
+  background-color: rgb(240, 240, 240);
 
 }
 nav {
@@ -45,8 +41,9 @@ nav {
   width: 100%;
   height: 70px;
   background-color: rgba(255, 255, 255, 0);
+  position: sticky;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -70,7 +67,7 @@ nav {
   text-decoration: none;
   margin: 10px;
   padding: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 /* .nav-social{
     display: flex;
@@ -195,7 +192,7 @@ nav {
 .hr-stylish{
   margin: 20px;
   padding: 20px;
-  color:red; width: 40px;border-color:red; margin:auto;
+  color:rgb(0, 0, 0); width: 40px;border-color:rgb(0, 0, 0); margin:auto;
   animation-name: example;
   animation-duration: 4s;
   animation-iteration-count: infinite;
@@ -274,7 +271,7 @@ nav {
 
 /*  */
 .heading-type-1{
-  color:white;
+  color:rgb(0, 0, 0);
   text-align: center;
   font-size: 64px;
 }
@@ -351,17 +348,24 @@ nav {
 
 
 .button-fancy{
-  background-color: transparent;
-  color:white;
-  padding: 5px;
-  margin: 5px;
-  padding-left: 18px;
-  padding-right: 18px;
-  border-radius: 12px;
-  font-size: large;
+  padding: 20px;
+  border: none;
+  outline: none;
   text-decoration: none;
-  color:#f9403d;
-  transition: all ease-out 0.2s;
+  background: #f5f5f5;
+  color: #000;
+  font-family: 'Alice';
+  transition:all ease-in 0.1s;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px rgb(0 0 0 / 16%);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-fancy:hover{
+  box-shadow: none;
 }
 .scrolldownButton{
   background-color: transparent;
@@ -408,11 +412,9 @@ nav {
 
 }
 
-@media only screen and (max-width: 900px) {
-  .ourgamesContainer{
-    flex-direction: column;
-  }
-  
+ul li {
+  text-align: center;
+  color:rgb(95, 15, 42)
 }
 
 
@@ -430,16 +432,69 @@ nav {
 }
 .necont {
   margin: 10px;
-  box-shadow: 0 0 20px black;
+  background-color: rgb(248, 248, 248);
+  
   width: 21rem;
-    border-radius: 10px;
+  border-radius: 10px;
+}
+.necont:hover {
+  box-shadow: 0 0 20px #e0e0e0;
 
 }
 .form-field{
   margin: 10px;
   
 }
+
+.submit {
+  width: 270px;
+  height: 80px;
+  border: none;
+  outline: none;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.w40{
+  width: 80px;
+  height:40px;
+}
+
+.button-type-2 {
+  padding: 20px;
+  border: none;
+  outline: none;
+  background: #f5f5f5;
+  color: #000;
+  font-family: 'Alice';
+  transition:all ease-in 0.1s;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px rgb(0 0 0 / 16%);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.button-type-2:hover{
+  box-shadow: none;
+}
+.cardify{
+  
+}
+.cardify:hover{
+  box-shadow: 0 6px 20px -5px rgb(0 0 0 / 16%);
+}
+
+
 .form-field input{
+  border:1px solid rgb(185, 185, 185);
   padding: 10px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 900;
@@ -447,13 +502,10 @@ nav {
 }
 
 .form-label{
+  color:black;
   display: flex;
   position: relative;
   justify-content: center;
-}
-
-.login-button{
-
 }
 
 
@@ -469,32 +521,26 @@ nav {
 
 
 
-
-
-
-
-
-.underline {
-  color: inherit;
-  text-decoration: none;
+  .delete-button {
+    width: 40px;
+    height: 40px;
+    border-radius:20px;
+    border:none;
+    background:#ffc7c7;
+    box-shadow: 0 0 20px #cac7c7;
+    align-self: center;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    transition: all 2s ease;
   }
-  
-  
-  .underline {
-    box-shadow: 0 0 20px black;
-  background: 
-    linear-gradient(to right, #870e0c , #870e0c ),
-    linear-gradient(to right,  rgb(54, 5, 114), rgb(11, 4, 17), rgb(54, 5, 114));
-  background-size: 100% 0.1em, 0 0.1em;
-  background-position: 100% 100%, 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 400ms;
-  }
+  .delete-button:hover {
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      background:#ffc7c7;
+      box-shadow: 0 0 20px #5e5e5e;
 
-  
-  .underline:hover,
-  .underline:focus {
-  background-size: 0 0.1em, 100% 0.1em;
   }
   
 

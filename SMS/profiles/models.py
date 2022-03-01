@@ -24,7 +24,7 @@ class chatlog(models.Model):
 	created = models.DateTimeField(auto_now_add = True)
 	ended = models.DateTimeField(auto_now_add = False)
 	messages = models.IntegerField(default=0)
-	cost = models.IntegerField(default=0)
+	cost = models.FloatField(default=0)
 
 class ChatbotProfile(models.Model):
 	def generateToken():
@@ -32,6 +32,7 @@ class ChatbotProfile(models.Model):
 
 	faqs = models.ManyToManyField(faq)
 	context = models.TextField(max_length=10000)
+	greeting = models.TextField(max_length=1000, default="Hi there! How Can I Help You!")
 	owner = models.ForeignKey(User, related_name="Connected_User", on_delete=models.DO_NOTHING)
 	logs = models.ManyToManyField(chatlog)
 
@@ -62,7 +63,7 @@ class Profile(models.Model):
 
 	## ACTIVITY / STATS ##
 
-	credits = models.IntegerField(default=100)
+	credits = models.FloatField(default=100)
 	bots = models.ManyToManyField(ChatbotProfile)
 	
 

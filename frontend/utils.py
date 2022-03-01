@@ -2,6 +2,7 @@ import requests
 import json
 #import smartbot from smartbot
 url = "http://localhost:8000/api"
+url2 = "http://localhost:8000/costRegistration/"
 
 class BotInstance:
     def __init__(self, bot, token, ip):
@@ -19,29 +20,21 @@ def initializeToken(token, dict, Userip):
 
 def closeConnection(bots, botInstance:BotInstance, e:Exception):
     bots.remove(botInstance)
-    notes = f"Client Disconnected: {bot} ip {bot.ip}, remaining {bots} with Exception  {e}"
+    notes = f"Client Disconnected: {botInstance} ip {botInstance.ip}, remaining {bots} with Exception  {e}"
 
     print(notes)
 
 def getInformationFromDjangoDB(token):
-    try:
-        if token == "123123":
-            context = ""
-            greet = ""
-            questions = ""
-            status = ""
-            
-            return greet, context, questions, status
-        else:            
-            data = requests.get(url+token)
-            content = data.json()[0]
-            questions = content["faqs"]
-            context = content["context"]
-            greet = context#"WELCOME TO THE CHAT GUYS <DIVIDER> OPTION 1 <OPTION> OPTION 2 <OPTION> OPTION 3"
-            status = True
+    try:         
+        data = requests.get(url+token)
+        content = data.json()[0]
+        questions = content["faqs"]
+        context = content["context"]
+        greet = content["greeting"]#context#"WELCOME TO THE CHAT GUYS <DIVIDER> OPTION 1 <OPTION> OPTION 2 <OPTION> OPTION 3"
+        status = True
             
             
-            return greet, context, questions, status
+        return greet, context, questions, status
     except Exception as e:
         status = False
         error = f"something went wrong with Exception {e}, Please contact support"
@@ -59,8 +52,18 @@ def processMsg(message):
 
     return reply
 
+def reportCost(cost, token, ip):
+    data = {
+        'cost':cost,
+        'token':token,
+        'ip': ip,
+        'auth':'123',
+    }
+    requests.post(url2, data=data)
 
 
+
+'''
 testContext = """Vavecorp is a webdevelopment agency. 
 We provide website solutions. Vavecorp charges depending on the job. 
 Contact us not at our email: contact@vavecorp.com
@@ -87,4 +90,4 @@ questionDict = {"How much do you charge?":"We charge around 100$ per site on a l
 
 greet = "Welcome to Vavecorp Customer Support!\n I am a smartbot agent, how may I help you? <DIVIDER> How much do you guys charge? <OPTION> what is your name? <OPTION> What is the pricing? <OPTION> How long does a project take?"
 
-
+'''

@@ -17,7 +17,7 @@
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Annie+Use+Your+Telescope:400">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     
-    
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     
     
     <script type="application/ld+json">{
@@ -30,9 +30,12 @@
     <meta property="og:title" content="DASHBOARD">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-879f"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src='{% static "images/default-logo.png"%}' class="u-logo-image u-logo-image-1">
+  <body class="u-body">
+    {% include "main/includes/messages.html" %}
+
+    <header class="u-clearfix u-header u-header" id="sec-879f"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="/" class="u-image u-logo u-image-1">
+          <h4 style="font-family:'Annie Use Your Telescope'; color:black;">Brainshell.IO</h4>
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font" style="font-size: 1.5rem; letter-spacing: 0px; font-family: &quot;Annie Use Your Telescope&quot;;">
@@ -47,9 +50,9 @@
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="/#sec-3e25" data-page-id="893723793" style="padding: 10px 20px;">Get Started</a>
 </li>
 {% if user.is_authenticated %}
-<li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="logout/" target="_blank" style="padding: 10px 20px;">Log Out</a></li>
+<li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="/logout/" target="_blank" style="padding: 10px 20px;">Log Out</a></li>
 {% else %}
-<li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="login/" target="_blank" style="padding: 10px 20px;">Sign Up / Log in</a></li>
+<li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="/login/" target="_blank" style="padding: 10px 20px;">Sign Up / Log in</a></li>
 {% endif %}
 </ul>
           </div>
@@ -109,12 +112,12 @@
             </div>
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-xl u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-6">
-                <a href="#" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-custom-item u-hover-feature u-hover-palette-1-base u-none u-radius-50 u-btn-3">CHAT DATA</a>
+                <a href="#" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-custom-item u-hover-feature u-hover-palette-1-base u-none u-radius-50 u-btn-3" disabled>CHAT DATA</a>
               </div>
             </div>
             <div class="u-container-style u-list-item u-repeater-item">
               <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-xl u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-7">
-                <a href="#" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-custom-item u-hover-feature u-hover-palette-1-base u-none u-radius-50 u-btn-4">MORE CREDITS</a>
+                <a href="#" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-custom-item u-hover-feature u-hover-palette-1-base u-none u-radius-50 u-btn-4" disabled>MORE CREDITS</a>
               </div>
             </div>
           </div>
@@ -132,7 +135,10 @@
 	c0.863,3.758,3.76,6.463,3.76,6.463v3.157c0,1.151-0.629,2.211-1.64,2.762L3.61,46.622C1.385,47.836,0,50.168,0,52.703V55.5h14
 	v-3.239C14,49.326,15.603,46.625,18.18,45.22z"></path></svg><img></span>&nbsp;Sessions
         </h1>
+       
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
+          <h6 style="color:gray;">Last 10 Chat Logs</h6>
+          
           <table class="u-table-entity">
             <colgroup>
               <col width="25%">
@@ -144,35 +150,21 @@
               <tr style="height: 45px;">
                 <th class="u-table-cell">ID</th>
                 <th class="u-table-cell">Date</th>
-                <th class="u-table-cell">End</th>
-                <th class="u-table-cell">Cost</th>
+                <th class="u-table-cell">User IP</th>
+                <th class="u-table-cell">Messages</th>
+                <th class="u-table-cell">Tokens</th>
               </tr>
             </thead>
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+              {% for log in logs %}
               <tr style="height: 65px;">
-                <td class="u-table-cell">Row 1</td>
-                <td class="u-table-cell">Description</td>
-                <td class="u-table-cell">20/20/20</td>
-                <td class="u-table-cell">-20 Credits</td>
+                <td class="u-table-cell">#{{ forloop.counter }}</td>
+                <td class="u-table-cell">{{ log.ended }}</td>
+                <td class="u-table-cell">{{log.userIP}}</td>
+                <td class="u-table-cell" >{{ log.messages }}</td>
+                <td class="u-table-cell" style="color:red;">-{{log.cost}}</td>
               </tr>
-              <tr style="height: 65px;">
-                <td class="u-table-cell">Row 2</td>
-                <td class="u-table-cell">Description</td>
-                <td class="u-table-cell">Description</td>
-                <td class="u-table-cell">Description</td>
-              </tr>
-              <tr style="height: 65px;">
-                <td class="u-table-cell">Row 3</td>
-                <td class="u-table-cell">Description</td>
-                <td class="u-table-cell">Description</td>
-                <td class="u-table-cell">Description</td>
-              </tr>
-              <tr style="height: 65px;">
-                <td class="u-table-cell">Row 4</td>
-                <td class="u-table-cell">Description</td>
-                <td class="u-table-cell">Description</td>
-                <td class="u-table-cell">Description</td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>
@@ -186,10 +178,8 @@
     
     
     
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-00ff"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">brainshell.io</p>
-      </div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
+      <p class="u-small-text u-text u-text-variant u-text-1">brainshell.io</p>
       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
         <span>Website Templates</span>
       </a>
@@ -203,7 +193,11 @@
   <section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-60 u-section-4" id="sec-c309">
       <div class="u-align-center u-container-style u-dialog u-radius-37 u-shape-round u-white u-dialog-1">
         <div class="u-container-layout u-container-layout-1">
+          {% if bot == "NOT FOUND" %}
           <h6 class="u-text u-text-custom-color-5 u-text-default u-text-1">Chatbot profile</h6>
+          {% else %}
+          <h6 class="u-text u-text-custom-color-5 u-text-default u-text-1">Edit Chatbot profile</h6>
+          {% endif %}
           <blockquote id="chatbot_quote"class="u-border-6 u-border-custom-color-5 u-custom-font u-indent-0 u-text u-text-2"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" style="width: 1em; height: 1em;"><path style="fill:#EFCE4A;" d="M26.5,9c-8.837,0-16,7.164-16,16c0,7.089,4.615,13.091,11,15.192V50h2v3h6v-3h2v-9.808
 	c6.385-2.101,11-8.103,11-15.192C42.5,16.164,35.337,9,26.5,9z"></path><g><path style="fill:#EFCE4A;" d="M26.5,0c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1s1-0.447,1-1V1C27.5,0.447,27.053,0,26.5,0z"></path><path style="fill:#EFCE4A;" d="M50.5,24h-4c-0.553,0-1,0.447-1,1s0.447,1,1,1h4c0.553,0,1-0.447,1-1S51.053,24,50.5,24z"></path><path style="fill:#EFCE4A;" d="M6.5,24h-4c-0.553,0-1,0.447-1,1s0.447,1,1,1h4c0.553,0,1-0.447,1-1S7.053,24,6.5,24z"></path><path style="fill:#EFCE4A;" d="M42.764,7.322l-2.828,2.828c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293
 		s0.512-0.098,0.707-0.293l2.828-2.828c0.391-0.391,0.391-1.023,0-1.414S43.154,6.932,42.764,7.322z"></path><path style="fill:#EFCE4A;" d="M11.65,38.436l-2.828,2.828c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293
@@ -214,12 +208,15 @@
 	c-5.514,0-10,4.486-10,10C16.5,25.553,16.053,26,15.5,26z"></path><polygon style="fill:#556080;" points="21.5,43 21.5,50 23.5,50 23.5,53 29.5,53 29.5,50 31.5,50 31.5,43 "></polygon></svg><img></span>&nbsp;​the quality of your chatbot depends on the information you provide here so please be​ accurate
           </blockquote>
           <div class="u-clearfix u-custom-html u-custom-html-1">
-            <div class="new-chatbot">
+            {% if bot == "NOT FOUND" %}
+            <div class="new-chatbot"> 
               <form action="#" id="chatbotForm" method="POST">
                 {% csrf_token %}
 
                   <label for="context" class="chatbot-label">Please Provide Your Business' Information In Detail</label><br>
                   <textarea id="context" name="context" placeholder="Business Info" form="chatbotForm"></textarea><br>
+                  <label for="greeting" class="chatbot-label">Please Provide A Default Greeting Message</label><br>
+                  <textarea id="greeting" name="greeting" placeholder="Hi there! How Are You" form="chatbotForm"></textarea><br>
                   <input type="hidden" name="type" id="type" value="chatbotGeneration">
 
                   <div id="faqs" class="faq-holder">
@@ -240,15 +237,117 @@
                     <q id="faq_more" class="faq_more" > Add More FAQs+</q>
                   </div>
                   <div class="spaceme">
-                    <input type="submit" class="submit" value="Submit">
+                    <button type="submit" class="submit">Create</button>
                   </div>
 
               </form>
             </div>
+            {% else %}
+            <div class="new-chatbot"> 
+              <form action="#" id="chatbotForm" method="POST">
+                {% csrf_token %}
+                  <label for="context" class="chatbot-label">Please Provide Your Business' Information In Detail</label><br>
+                  <textarea id="context" name="context" placeholder="Business Info" form="chatbotForm">{{ bot.context }}</textarea><br>
+                  <label for="greeting" class="chatbot-label">Please Provide A Default Greeting Message</label><br>
+                  <textarea id="greeting" name="greeting" placeholder="Hi there! How Are You" form="chatbotForm">{{ bot.greeting }}</textarea><br>
+                  <input type="hidden" name="type" id="type" value="chatbotGeneration">
+
+                  <div id="faqs" class="faq-holder">
+                    <h4 class="form-heading">Frequently Asked Questions</h4>
+                    {% for f in faqs %}
+
+                    <div class="faq-single" id="faq_{{ forloop.counter }}">
+                      <div class="faq-question">
+                        <label for="lname">Question</label><br>
+                        <input type="text" id="q0" name="q0" value="{{ f.question }}"><br><br>
+                      </div>
+                      <div class="faq-answer">
+                        <label for="lname">Answer</label><br>
+                        <input type="text" id="a0" name="a0" value="{{ f.ans }}"><br><br>
+                      </div>
+
+                      <div class="delete-button" onclick="deleteFaq('faq_{{forloop.counter}}')">x</div>
+                    </div>
+                    
+                    {% endfor %}
+                    
+                    
+                  </div>
+                  <div class="spaceme">
+                    <q id="faq_more" class="faq_more" > Add More FAQs+</q>
+                  </div>
+                  <div class="spaceme">
+                    <button type="submit" class="submit"> Update</button>
+                  </div>
+
+              </form>
+
+              
+              <blockquote id="chatbot_quote"class="u-border-6 u-border-custom-color-5 u-custom-font u-indent-0 u-text u-text-2"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" style="width: 1em; height: 1em;"><path style="fill:#EFCE4A;" d="M26.5,9c-8.837,0-16,7.164-16,16c0,7.089,4.615,13.091,11,15.192V50h2v3h6v-3h2v-9.808
+                c6.385-2.101,11-8.103,11-15.192C42.5,16.164,35.337,9,26.5,9z"></path><g><path style="fill:#EFCE4A;" d="M26.5,0c-0.553,0-1,0.447-1,1v4c0,0.553,0.447,1,1,1s1-0.447,1-1V1C27.5,0.447,27.053,0,26.5,0z"></path><path style="fill:#EFCE4A;" d="M50.5,24h-4c-0.553,0-1,0.447-1,1s0.447,1,1,1h4c0.553,0,1-0.447,1-1S51.053,24,50.5,24z"></path><path style="fill:#EFCE4A;" d="M6.5,24h-4c-0.553,0-1,0.447-1,1s0.447,1,1,1h4c0.553,0,1-0.447,1-1S7.053,24,6.5,24z"></path><path style="fill:#EFCE4A;" d="M42.764,7.322l-2.828,2.828c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293
+                  s0.512-0.098,0.707-0.293l2.828-2.828c0.391-0.391,0.391-1.023,0-1.414S43.154,6.932,42.764,7.322z"></path><path style="fill:#EFCE4A;" d="M11.65,38.436l-2.828,2.828c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293
+                  s0.512-0.098,0.707-0.293l2.828-2.828c0.391-0.391,0.391-1.023,0-1.414S12.041,38.045,11.65,38.436z"></path><path style="fill:#EFCE4A;" d="M41.35,38.436c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l2.828,2.828
+                  c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L41.35,38.436z"></path><path style="fill:#EFCE4A;" d="M10.236,7.322c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l2.828,2.828
+                  c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L10.236,7.322z"></path>
+              </g><path style="fill:#F7E6A1;" d="M15.5,26c-0.553,0-1-0.447-1-1c0-6.617,5.383-12,12-12c0.553,0,1,0.447,1,1s-0.447,1-1,1
+                c-5.514,0-10,4.486-10,10C16.5,25.553,16.053,26,15.5,26z"></path><polygon style="fill:#556080;" points="21.5,43 21.5,50 23.5,50 23.5,53 29.5,53 29.5,50 31.5,50 31.5,43 "></polygon></svg><img></span>&nbsp;To use this bot, paste this Embed code
+                </blockquote>
+              
+              
+              <h6>Paste This Inside Head</h6>
+              <div class="embed">
+                &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"&gt;
+                <br>
+                &lt;link rel="stylesheet" href="chatbot.css"&gt;
+              </div>
+              <h6>Paste This Inside Body</h6>
+              <div class="embed">
+                &lt;section class="smartbot-section" id="{{bot.token}}"&gt;
+                &lt;button class="smartbot-chat-btn smartbot-button"&gt; 
+                    &lt;i class="material-icons"&gt; comment &lt;/i&gt;
+                &lt;/button&gt;
+        
+                &lt;div id="chat-popup" class="smartbot-chat-popup"&gt;
+                    &lt;!-- &lt;div class="badge"&gt;1&lt;/div&gt; --&gt;
+                    &lt;div class="smartbot-chat-area"&gt;
+                      &lt;span id="established" class="" style="color:gray;padding-top:20px;"&gt;
+                        Establishing connection please wait
+                      &lt;/span&gt;
+                    &lt;/div&gt;
+        
+                    &lt;div class="smartbot-information-panel"&gt;
+                      &lt;button id="end-convo" class="smartbot-button smartbot-info"&gt;
+                        END CONVERSATION
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+        
+                    &lt;div class="smartbot-input-area"&gt;
+                        &lt;input class="smartbot-input" type="text" id="submit-text" placeholder="Type your message here!"&gt;
+                        &lt;button class="smartbot-submit smartbot-button" id="submit-button"&gt;&lt;img width="20px" src="send.png"&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"&gt;&lt;/script&gt;
+                &lt;script src="chatbot.js"&gt;&lt;/script&gt;
+            &lt;/section&gt;
+            
+              </div>
+            </div>
+            {% endif %}
           </div>
         </div><button class="u-dialog-close-button u-icon u-text-grey-50 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-5801"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-5801"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></button>
       </div>
-    </section><style> .u-section-4 {
+    </section>
+    
+
+    <script>
+      function deleteFaq(id){
+        var element = document.getElementById(id);
+	      element.parentNode.removeChild(element);
+        
+      }
+    </script>
+
+    <style> .u-section-4 {
   min-height: 869px;
 }
 

@@ -477,7 +477,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /*font-family: 'Poppins', sans-serif;*/
 }
 
 .container{
@@ -566,7 +566,7 @@ textarea{
   border: 1px solid #e2e2e2;
   border-radius:20px;
   transition:all ease-in 0.2s;
-  padding:20px;
+  padding:20px !important;
 }
 textarea:hover{
   box-shadow: 0 6px 20px -5px rgb(0 0 0 / 16%);
@@ -593,7 +593,7 @@ label{
 input{
   border:1px solid #e2e2e2;
   border-radius: 20px;
-  padding:20px;
+  padding:20px !important;
   transition: all ease-in 0.2s;
 }
 input:hover{
@@ -641,4 +641,34 @@ input:hover{
 
 .fieldWrapper input {
   width:100%;
+}
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius:20px;
+  border:none;
+  background:#ffc7c7;
+  box-shadow: 0 0 20px #cac7c7;
+  display: flex;
+  justify-content: center;
+  font-family: 'Alice';
+  align-items: center;
+  align-self: center;
+  transition: all 2s ease;
+}
+.delete-button:hover {
+    cursor:pointer;
+    width: 60px;
+    height: 60px;
+    background:#ffc7c7;
+    box-shadow: 0 0 20px #5e5e5e;
+
+}
+.embed{
+  background-color: #eeeeee;
+  text-align: left;
+  color:black;
+  width: 100%;
+  padding:20px;
 }

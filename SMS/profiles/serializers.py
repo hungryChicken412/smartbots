@@ -32,6 +32,7 @@ class ChatbotTalkSerializer(serializers.ModelSerializer):
         fields = [
             'faqs',
             'context',
+            'greeting',
         ]
 
 

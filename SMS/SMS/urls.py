@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static  import static
-from .views import home_view, register, logout_request, login_request, landing, dashboard
+from .views import home_view, register, logout_request, login_request, landing, dashboard, cost
 
 from profiles.models import Profile
 from profiles.views import ProfileViewSet, ChatbotTalkViewSet
@@ -33,6 +33,7 @@ from django.views.decorators.csrf import csrf_exempt
 router = routers.DefaultRouter()
 router.register(r'(?P<token>[-\w]+)', ChatbotTalkViewSet, basename='talkView')
 
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 
@@ -45,6 +46,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', landing, name="landing"),
+    path('costRegistration/', cost),
     
     path('tinymce/', include('tinymce.urls')),
     path('app/', dashboard, name="app-dashboard"),

@@ -64,10 +64,14 @@ chatbotNew.addEventListener('click', (e) => {
 more_faqs = document.querySelector('#faq_more')
 fare = document.querySelector('#faqs')
 i = 0
+
+
+
+
 more_faqs.addEventListener('click', (e) => {
   i += 1;
   console.log("ok");
-  let doc = `<div class="faq-single">
+  let doc = `<div class="faq-single" id='addedfaq_${i}' >
   <div class="faq-question">
     <label for="lname">Question</label><br>
     <input type="text" id="q${i}" name="q${i}" value=""><br><br>
@@ -76,8 +80,12 @@ more_faqs.addEventListener('click', (e) => {
     <label for="lname">Answer</label><br>
     <input type="text" id="a${i}" name="a${i}" value=""><br><br>
   </div>
-</div>`;
+  
+</div>
+
+`;
 
   fare.insertAdjacentHTML("beforeend", doc);
+  
 })
 
