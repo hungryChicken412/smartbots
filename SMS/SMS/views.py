@@ -90,6 +90,7 @@ def landing(request):
 		'user':user,
 		'hello':hello,
 	}
+	
 	return render(request, 'landing.html', context)
 
 

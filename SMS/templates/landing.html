@@ -56,7 +56,7 @@
             <ul class="u-custom-font u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="#sec-eb2c" data-page-id="893723793" style="padding: 10px 20px;">Home</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="#sec-3e25" data-page-id="893723793" style="padding: 10px 20px;">Get Started</a>
 </li>
-{% if user.is_authernticated %}
+{% if user.is_authenticated %}
 <li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="logout/" target="_blank" style="padding: 10px 20px;">Log Out</a></li>
 {% else %}
 <li class="u-nav-item"><a class="u-border-2 u-border-active-palette-4-base u-border-hover-palette-4-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-4-base u-text-hover-palette-4-base" href="login/" target="_blank" style="padding: 10px 20px;">Sign Up / Log in</a></li>
